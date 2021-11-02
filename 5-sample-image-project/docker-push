@@ -1,0 +1,3 @@
+#! /bin/bash
+
+docker push aetoledano93/sample-app

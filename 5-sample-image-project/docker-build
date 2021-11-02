@@ -1,0 +1,7 @@
+#! /bin/bash
+
+docker build . -t aetoledano93/sample-app
+
+# with progress and no-caching
+
+# docker build --progress plain --no-cache . -t aetoledano93/sample-app

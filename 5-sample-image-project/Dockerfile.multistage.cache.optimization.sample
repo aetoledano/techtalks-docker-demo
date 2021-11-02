@@ -1,0 +1,29 @@
+# Stage 1
+
+FROM gradle:7.0-jdk11 as builder
+
+ENV ROOT /app
+
+RUN mkdir $ROOT
+
+WORKDIR $ROOT
+
+COPY build.gradle.kts $ROOT/
+
+COPY settings.gradle.kts $ROOT/
+
+RUN gradle dependencies
+
+COPY . $ROOT
+
+RUN gradle build
+
+# Stage 2
+
+FROM openjdk:11-jre-slim-buster
+
+RUN mkdir /app
+
+COPY --from=builder /app/build/libs/demopg-0.0.1-SNAPSHOT.jar /app/demopg-0.0.1-SNAPSHOT.jar
+
+ENTRYPOINT ["java", "-jar", "/app/demopg-0.0.1-SNAPSHOT.jar"]

@@ -1,0 +1,5 @@
+#! /bin/bash
+
+docker run redis:6.2.1-alpine &
+docker run -e POSTGRES_HOST_AUTH_METHOD=trust postgres &
+

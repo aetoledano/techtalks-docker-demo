@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://sample-db:5432/tt_test_db?user=postgres&password=postgres"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop

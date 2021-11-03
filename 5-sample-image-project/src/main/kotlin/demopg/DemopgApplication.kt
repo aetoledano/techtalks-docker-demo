@@ -9,6 +9,6 @@ class DemopgApplication
 
 
 fun main(args: Array<String>) {
-	//println("Docker Goooooooooooooooooo !!!")
+	println("Docker Goooooooooooooooooo !!!")
 	runApplication<DemopgApplication>(*args)
 }
